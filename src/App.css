@@ -19,6 +19,11 @@ body{
   height: 40vmin;
   pointer-events: none;
 }
+@media screen and (min-width:1061px){
+.product{
+  top:0rem;
+}
+}
 @media screen and (max-width:1060px){
 .product{
   top:14rem;

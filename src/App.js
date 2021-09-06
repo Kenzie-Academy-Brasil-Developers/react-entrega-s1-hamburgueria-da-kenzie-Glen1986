@@ -14,21 +14,98 @@ function App() {
     { id: 7, name: 'Fanta', category: 'Bebidas', price: 4.99 },
   ]); 
 
-const [filteredProducts, setFilteredProducts] = useState([]);
+//const [filteredProducts, setFilteredProducts] = useState([]);
 
-const [currentSale, setCurrentSale] = useState([])
-const [cartTotal, setCartTotal] = useState(0)
+//const [currentSale, setCurrentSale] = useState([])
+//const [cartTotal, setCartTotal] = useState(0)
 
-const  showProducts = () =>{
-
+const  showProducts = (e) =>{
+  console.log(e)
 }
- const  handleClick = (productId) =>{
+// const  handleClick = (productId) =>{
 
-}
+//}
 return (
   <div className="App">
     <div className="ContainerMenu">
+
+       <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=1 }
+          name={products.name='X-Burguer' }
+          category={products.category='Sanduíches' }
+          price={products.price= 8.99 }
+          showProducts = {showProducts}
+        />
+       <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=2 }
+          name={products.name='X-Burguer' }
+          category={products.category='Sanduíches' }
+          price={products.price= 8.99 }
+          showProducts = {showProducts}
+        />
+        <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=3 }
+          name={products.name='X-Salada' }
+          category={products.category='Sanduíches' }
+          price={products.price= 10.99 }
+          showProducts = {showProducts}
+        /> 
+        <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=4 }
+          name={products.name='Big-Kenzie' }
+          category={products.category='Sanduíches' }
+          price={products.price= 16.99 }
+          showProducts = {showProducts}
+        />
+        <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=5 }
+          name={products.name='Guaraná' }
+          category={products.category='Bebidas' }
+          price={products.price= 4.99 }
+          showProducts = {showProducts}
+        />
+        <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=6 }
+          name={products.name='Coca' }
+          category={products.category='Bebidas' }
+          price={products.price= 4.99 }
+          showProducts = {showProducts}
+        />
+        <MenuContainer
+          products={products}
+          setProducts={setProducts}
+          id={products.id=7 }
+          name={products.name='Fanta' }
+          category={products.category='Bebidas' }
+          price={products.price= 4.99 }
+          showProducts = {showProducts}
+        />
+
+
 {/*
+       <MenuContainer
+         products={products}
+         setProducts={setProducts}
+         id={products.map((item)=>item.id)}
+         name={products.map((item)=>item.name)}
+         category={products.map((item)=>item.category)}
+         price={products.map((item)=>item.price)}
+         showProducts={showProducts}
+       ></MenuContainer>
+
+
        <MenuContainer
           products={products}
           setProducts={setProducts}
@@ -38,63 +115,6 @@ return (
           price={products.price=[...products.price]}
         />
         **/}
-       <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=1 }
-          name={products.name='X-Burguer' }
-          category={products.category='Sanduíches' }
-          price={products.price= 8.99 }
-        />
-       <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=2 }
-          name={products.name='X-Burguer' }
-          category={products.category='Sanduíches' }
-          price={products.price= 8.99 }
-        />
-        <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=3 }
-          name={products.name='X-Salada' }
-          category={products.category='Sanduíches' }
-          price={products.price= 10.99 }
-        /> 
-        <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=4 }
-          name={products.name='Big-Kenzie' }
-          category={products.category='Sanduíches' }
-          price={products.price= 16.99 }
-        />
-        <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=5 }
-          name={products.name='Guaraná' }
-          category={products.category='Bebidas' }
-          price={products.price= 4.99 }
-        />
-        <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=6 }
-          name={products.name='Coca' }
-          category={products.category='Bebidas' }
-          price={products.price= 4.99 }
-        />
-        <MenuContainer
-          products={products}
-          setProducts={setProducts}
-          id={products.id=7 }
-          name={products.name='Fanta' }
-          category={products.category='Bebidas' }
-          price={products.price= 4.99 }
-        />
-
             </div>
        <Product></Product>
     </div>
