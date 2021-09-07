@@ -1,5 +1,6 @@
 import MenuContainer from './components/MenuContainer'
 import Product from './components/Product'
+import Subtotal from './components/Subtotal'
 import './App.css';
 import { useState } from 'react'
 
@@ -14,13 +15,15 @@ function App() {
     { id: 7, name: 'Fanta', category: 'Bebidas', price: 4.99 },
   ]); 
 
-//const [filteredProducts, setFilteredProducts] = useState([]);
+const [filteredProducts, setFilteredProducts] = useState([]);
 
 //const [currentSale, setCurrentSale] = useState([])
 const [cartTotal, setCartTotal] = useState(0)
 
 const  showProducts = (e) =>{
-  console.log(e)
+  setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
+    //console.log(products.filter(item =>item.name === e))
+  )
 }
 // const  handleClick = (productId) =>{
 
@@ -117,6 +120,12 @@ return (
         **/}
             </div>
        <Product></Product>
+    <div>
+      <Subtotal
+        filteredProducts = { filteredProducts }
+      ></Subtotal>
+    </div>
+
     </div>
   );
 }
