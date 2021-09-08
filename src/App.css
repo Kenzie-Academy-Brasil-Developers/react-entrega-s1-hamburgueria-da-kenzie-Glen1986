@@ -33,10 +33,7 @@ body{
   .ContainerMenu{
 flex-direction:row;
 }
-  .product{
-  margin-top:4rem;
-  left:80%;
-  }
+
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

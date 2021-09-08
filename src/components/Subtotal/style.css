@@ -1,6 +1,12 @@
 .subtotal{
-  position: absolute;
-  left:4rem;
-  top:20rem;
-
+  position: fixed;
+  left:16rem;
+  top:26rem;
+}
+@media ( min-width: 760px ){
+  .subtotal{
+    position: absolute;
+    left: 4rem;
+    top: 24rem;
+  }
 }
