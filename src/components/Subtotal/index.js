@@ -1,9 +1,9 @@
 import './style.css'
-const Subtotal =({filteredProducts})=>{
+const Subtotal =({cartTotal})=>{
   return(
   <section className="subtotal">
     <h3>subtotal:</h3>
-    <p> {filteredProducts.name}</p>
+    <p> {cartTotal}</p>
   </section>
   )
 }

@@ -1,6 +1,7 @@
 import MenuContainer from './components/MenuContainer'
 import Product from './components/Product'
 import Subtotal from './components/Subtotal'
+import NavBar from './components/NavBar'
 import './App.css';
 import { useState } from 'react'
 
@@ -17,21 +18,41 @@ function App() {
 
 const [filteredProducts, setFilteredProducts] = useState([]);
 
-//const [currentSale, setCurrentSale] = useState([])
-const [cartTotal, setCartTotal] = useState(0)
+const [currentSale, setCurrentSale] = useState([]);
+const [cartTotal, setCartTotal] = useState(0);
+const [userInput, setUserInput]=useState("");
+
 
 const  showProducts = (e) =>{
   setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
     //console.log(products.filter(item =>item.name === e))
   )
+};
+ const  handleClick = (e) =>{
+     var newObj = products.find((item) =>item.id === e);
+     console.log(newObj.price)
+     console.log(e)
+   setCurrentSale(
+     [...currentSale, [newObj.name,<br/>, newObj.category,<br/>, newObj.price,<br/>]]
+   )
 }
-// const  handleClick = (productId) =>{
-
-//}
+const suma = ({newObj}) =>{
+    var cunt = newObj.map(item => item === item.price).reduce((a,b)=> a+b)
+  setCartTotal(
+    [cartTotal,  cunt]
+  )
+}
 return (
+  <>
+      <NavBar
+        filteredProducts={filteredProducts}
+        setFilteredProducts={setFilteredProducts}
+        showProducts= {showProducts}
+        userInput = {userInput}
+        setUserInput = { setUserInput }
+      ></NavBar>
   <div className="App">
     <div className="ContainerMenu">
-
        <MenuContainer
           products={products}
           setProducts={setProducts}
@@ -40,6 +61,8 @@ return (
           category={products.category='Sanduíches' }
           price={products.price= 8.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
+         
         />
        <MenuContainer
           products={products}
@@ -49,6 +72,7 @@ return (
           category={products.category='Sanduíches' }
           price={products.price= 8.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
         />
         <MenuContainer
           products={products}
@@ -58,6 +82,7 @@ return (
           category={products.category='Sanduíches' }
           price={products.price= 10.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
         /> 
         <MenuContainer
           products={products}
@@ -67,6 +92,7 @@ return (
           category={products.category='Sanduíches' }
           price={products.price= 16.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
         />
         <MenuContainer
           products={products}
@@ -76,6 +102,7 @@ return (
           category={products.category='Bebidas' }
           price={products.price= 4.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
         />
         <MenuContainer
           products={products}
@@ -85,6 +112,7 @@ return (
           category={products.category='Bebidas' }
           price={products.price= 4.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
         />
         <MenuContainer
           products={products}
@@ -94,6 +122,7 @@ return (
           category={products.category='Bebidas' }
           price={products.price= 4.99 }
           showProducts = {showProducts}
+          handleClick={handleClick}
         />
 
 
@@ -119,14 +148,18 @@ return (
         />
         **/}
             </div>
-       <Product></Product>
+       <Product
+         currentSale = { currentSale }
+         setCurrentSale = { setCurrentSale }
+       ></Product>
     <div>
       <Subtotal
-        filteredProducts = { filteredProducts }
+        cartTotal = {cartTotal}
       ></Subtotal>
     </div>
 
     </div>
+    </>
   );
 }
 

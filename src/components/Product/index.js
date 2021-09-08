@@ -1,10 +1,8 @@
 import './style.css'
-const Product =()=>{
+const Product =( {currentSale} )=>{
   return(
   <section className="product">
-    <div className="nombre">nombre</div>
-    <div className="categoria">categoria</div>
-    <div className="precio">preço</div>
+    <div className="nombre">{currentSale}</div>
     <button>click</button>
   </section>
   )

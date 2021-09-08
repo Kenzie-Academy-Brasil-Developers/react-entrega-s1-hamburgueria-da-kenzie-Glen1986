@@ -1,0 +1,14 @@
+form{
+  height:3rem;
+  display: flex;
+  margin: 2rem 30%;
+}
+button.NavBar{
+  width:6rem;
+  background-color: #42c6ff;
+}
+@media (min-width: 760px){
+  form{
+    margin: 2rem 40%;
+  }
+}
