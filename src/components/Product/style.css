@@ -1,13 +1,12 @@
 .product{
-  background-color:#42c6ff;
   border:2px solid red;
   border-radius:25px;
   padding:2rem;
-  margin: -5rem 4rem 0 4rem ;
-  position: fixed;
-  left:55%;
+  width: 3rem;
 }
 
+
+/*
 @media (min-width:1061px){
   .product{
     top:4rem;
@@ -15,12 +14,11 @@
 }
 @media  (max-width:1060px){
   .product{
-    top:-14rem;
   }
 }
 @media (min-width:760px){
-  .product{
-    margin-top:9rem;
-    left:75%;
-  }
+  .block{
+    flex-direction:row;
+    }
 }
+*/

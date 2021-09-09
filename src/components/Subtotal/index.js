@@ -3,7 +3,7 @@ const Subtotal =({cartTotal})=>{
   return(
   <section className="subtotal">
     <h3>subtotal:</h3>
-    <p> {cartTotal}</p>
+    <h5> {cartTotal}R</h5>
   </section>
   )
 }

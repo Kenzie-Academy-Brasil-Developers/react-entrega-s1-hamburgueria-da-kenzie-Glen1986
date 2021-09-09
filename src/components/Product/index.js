@@ -1,10 +1,15 @@
 import './style.css'
-const Product =( {currentSale} )=>{
+const Product =( {item,id, name, category, price, handleClick,products } )=>{
   return(
-  <section className="product">
-    <div className="nombre">{currentSale}</div>
-    <button>click</button>
-  </section>
+  <div className="product">
+    <div className="id">{item.id}</div>
+    <div className="nombre">{item.name}</div>
+    <div className="categoria">{item.category}</div>
+    <div className="precio">{item.price}</div>
+    <button id={item.id} onClick= {()=>handleClick(item.id)}  className="button">{item.name}</button>
+  </div>
   )
 }
 export default Product;
+
+

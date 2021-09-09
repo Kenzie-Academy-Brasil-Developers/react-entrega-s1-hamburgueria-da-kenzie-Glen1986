@@ -9,12 +9,7 @@ body{
   margin:4rem auto;
   
 }
-.ContainerMenu{
-  display:flex;
-  flex-direction:column;
-  margin: 0 auto;
-  margin-left:3rem;
-}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
