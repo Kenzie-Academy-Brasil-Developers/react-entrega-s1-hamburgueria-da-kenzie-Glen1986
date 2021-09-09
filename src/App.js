@@ -1,7 +1,7 @@
 import MenuContainer from './components/MenuContainer'
 import Subtotal from './components/Subtotal'
 import NavBar from './components/NavBar'
-import Cart from './components/Cart'
+import ContCart from './components/ContCart'
 import './App.css';
 import { useState } from 'react'
 
@@ -19,7 +19,7 @@ function App() {
 const [filteredProducts, setFilteredProducts] = useState([]);
 
 const [currentSale, setCurrentSale] = useState([]);
-//const [cartTotal, setCartTotal] = useState(0);
+const [cartTotal, setCartTotal] = useState(0);
 const [userInput, setUserInput] = useState("");
 
 
@@ -33,8 +33,13 @@ const  showProducts = (e) =>{
    setCurrentSale(
      [...currentSale, products.find(item=>item.id === e)]
    )
+
 };
- 
+const addCart =()=>{
+  setCartTotal(
+  [...cartTotal, currentSale]
+  )
+} 
 
 return (
   <>
@@ -56,16 +61,20 @@ return (
         setProducts = { setProducts }
         handleClick = { handleClick }
       />
-      <Cart
-        currentSale = {currentSale}
-      ></Cart>
-
       <Subtotal
         cartTotal ={ 
-        currentSale.map(item => item ===
-        item.price) }
+        currentSale.map(item =>
+           [ item.price  ])
+
+        }
       ></Subtotal>
     </div>
+
+      <ContCart
+        currentSale = {currentSale}
+        addCart = {addCart}
+    
+      ></ContCart>
 
     </div>
     </>

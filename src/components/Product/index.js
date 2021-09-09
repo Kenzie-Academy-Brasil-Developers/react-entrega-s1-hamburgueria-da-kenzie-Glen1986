@@ -1,5 +1,5 @@
 import './style.css'
-const Product =( {item,id, name, category, price, handleClick,products } )=>{
+const Product =( {addCart,item,id, name, category, price, handleClick,products } )=>{
   return(
   <div className="product">
     <div className="id">{item.id}</div>
