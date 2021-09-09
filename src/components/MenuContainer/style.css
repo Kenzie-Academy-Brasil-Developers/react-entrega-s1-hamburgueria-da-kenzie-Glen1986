@@ -20,4 +20,13 @@
   width:100vw;
   display:contents;
 }
+.product{
+  display: flex;
+  flex-direction:column;
+}
+.product>button{
+  margin-left:-6px;
+  font-size:10px;
+  width:150%;
+}
 
