@@ -1,5 +1,4 @@
 import MenuContainer from './components/MenuContainer'
-import Product from './components/Product'
 import Subtotal from './components/Subtotal'
 import NavBar from './components/NavBar'
 import './App.css';
@@ -28,15 +27,15 @@ const  showProducts = (e) =>{
   setFilteredProducts([console.log(...filteredProducts), products.filter(item =>item.name === e)]
   )
 };
-
+/*
  const  handleClick = (e) =>{
     var newObj = products.find((item) =>item.id === e);
    console.log(e, newObj)
    setCurrentSale(
-     [...currentSale, [/*newObj.name,<br/>, newObj.category,<br/>, newObj.price,<br/>*/]]
+     [...currentSale, [newObj.name,<br/>, newObj.category,<br/>, newObj.price,<br/>]]
    )
 }
-
+*/
 
 return (
   <>
@@ -49,39 +48,19 @@ return (
       ></NavBar>
   <div className="App">
     <div className="ContainerMenu">
-      <MenuContainer 
-        id = {
-          products.map(item=>
-          <div>{item.id}</div>)}
-        name = {
-          products.map(item => 
-          <div>{item.name}</div> )}
-        category = {
-          products.map(item => 
-          <div>{item.category}</div> )}
-        price = {
-          products.map(item => 
-          <div>{item.price}</div> )}
-        button={products.map(item=>
-        <button id= {item.id}>{item.name}</button>
-        ) }
-        handleClick = {handleClick}
-
-
-      />
-    </div>
-       <Product
-         currentSale = { currentSale }
-         setCurrentSale = { setCurrentSale }
-       ></Product>
-    <div>
+      <MenuContainer
+        item = {
+        products.map(item=>
+          item)}
+        
+        products = { products }
+        setProducts = { setProducts }
+      >
+      </MenuContainer>
       <Subtotal
         cartTotal ={ 
         products.map(item => item ===
-         <div>{item.price}</div>   )
-             
-        }
-
+         <div>{item.price}</div>) }
       ></Subtotal>
     </div>
 
