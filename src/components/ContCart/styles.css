@@ -1,0 +1,15 @@
+.carrinho{
+  border: 2px solid red;
+  border-radius:15px;
+  padding: 6px;
+  display:flex;
+  flex-direction:column;
+  padding:2rem;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.container>.cart{
+  justify-content: space-between;
+}
