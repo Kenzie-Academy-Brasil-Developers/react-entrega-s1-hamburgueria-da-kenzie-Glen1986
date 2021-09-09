@@ -1,6 +1,7 @@
 import MenuContainer from './components/MenuContainer'
 import Subtotal from './components/Subtotal'
 import NavBar from './components/NavBar'
+import Cart from './components/Cart'
 import './App.css';
 import { useState } from 'react'
 
@@ -27,15 +28,13 @@ const  showProducts = (e) =>{
   setFilteredProducts([console.log(...filteredProducts), products.filter(item =>item.name === e)]
   )
 };
-/*
+
  const  handleClick = (e) =>{
-    var newObj = products.find((item) =>item.id === e);
-   console.log(e, newObj)
    setCurrentSale(
-     [...currentSale, [newObj.name,<br/>, newObj.category,<br/>, newObj.price,<br/>]]
+     [...currentSale, products.find(item=>item.id === e)]
    )
-}
-*/
+};
+ 
 
 return (
   <>
@@ -51,16 +50,20 @@ return (
       <MenuContainer
         item = {
         products.map(item=>
-          item)}
+         item) }
         
         products = { products }
         setProducts = { setProducts }
-      >
-      </MenuContainer>
+        handleClick = { handleClick }
+      />
+      <Cart
+        currentSale = {currentSale}
+      ></Cart>
+
       <Subtotal
         cartTotal ={ 
-        products.map(item => item ===
-         <div>{item.price}</div>) }
+        currentSale.map(item => item ===
+        item.price) }
       ></Subtotal>
     </div>
 

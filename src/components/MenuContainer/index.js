@@ -1,16 +1,11 @@
 import Product from '../Product';
 import './style.css';
-const MenuContainer =({item, products, setProducts})=>{
+const MenuContainer =({handleClick, item, products, setProducts})=>{
 
 
   return(
   <div className="block">
-    <Product
-      item = {item}
-      products = {products.map(item=>item)}
-      setProducts =  {setProducts}
-
-    ></Product>
+     {item.map(item=> <Product handleClick={handleClick} item ={item} key = {item.id} />)}
  </div>
   )
 }
