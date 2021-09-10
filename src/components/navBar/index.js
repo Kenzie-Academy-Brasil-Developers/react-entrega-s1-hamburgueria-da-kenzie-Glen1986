@@ -3,10 +3,10 @@ const NavBar = ({userInput, setUserInput, showProducts, filteredProducts, setFil
   return(
   <form action="Get">
     <input value={userInput}
-           onChange={e=>setUserInput(e.target.value)} 
+           onChange={(e)=>setUserInput(e.target.value)} 
            type="text"    
     />
-    <button className="NavBar" onClick = {(e) => showProducts}>Find</button>
+    <button onClick = {()=>showProducts()} >Find</button>
   </form>
   )
 }
