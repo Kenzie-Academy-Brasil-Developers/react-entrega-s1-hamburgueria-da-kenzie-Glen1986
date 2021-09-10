@@ -1,7 +1,8 @@
-import MenuContainer from './components/MenuContainer'
-import Subtotal from './components/Subtotal'
-import NavBar from './components/NavBar'
-import ContCart from './components/ContCart'
+import MenuContainer from './components/MenuContainer';
+///import WhiteB from './components/WhiteB';
+import Subtotal from './components/Subtotal';
+import NavBar from './components/NavBar';
+import ContCart from './components/ContCart';
 import './App.css';
 import { useState } from 'react'
 
@@ -23,26 +24,28 @@ const [cartTotal, setCartTotal] = useState(0);
 const [userInput, setUserInput] = useState("");
 
 
-const  showProducts = (e) =>{
-    console.log(products.filter(item =>item.name === e))
-  setFilteredProducts([console.log(...filteredProducts), products.filter(item =>item.name === e)]
-  )
+const showProducts = (e) =>{
+  e.preventDefault();
+//  setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
+//  )
 };
-
  const  handleClick = (e) =>{
    setCurrentSale(
      [...currentSale, products.find(item=>item.id === e)]
    )
-
 };
-const addCart =()=>{
+/*
+const total =()=>{
   setCartTotal(
-  [...cartTotal, currentSale]
+    [...cartTotal, currentSale.map(item=>item.price).reduce((a,b)=>{
+      return a + b
+    })]
   )
-} 
-
+}
+*/
 return (
   <>
+        <h1>KenzieBurguer</h1>
       <NavBar
         filteredProducts={filteredProducts}
         setFilteredProducts={setFilteredProducts}
@@ -62,17 +65,14 @@ return (
         handleClick = { handleClick }
       />
       <Subtotal
-        cartTotal ={ 
-        currentSale.map(item =>
-           [ item.price  ])
-
-        }
+        currentSale = {currentSale}
+        cartTotal ={ Number(cartTotal)}
+        setCartTotal = {setCartTotal}
       ></Subtotal>
     </div>
 
       <ContCart
         currentSale = {currentSale}
-        addCart = {addCart}
     
       ></ContCart>
 

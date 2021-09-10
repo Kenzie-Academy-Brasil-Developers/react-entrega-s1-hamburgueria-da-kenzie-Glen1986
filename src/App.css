@@ -1,15 +1,17 @@
 body{
-    background-color:#8cff7a;
+    background-color:#90a8ab;
 
   }
 .App {
   text-align: center;
   display:flex;
   margin-top:4rem;
-  margin:4rem auto;
+  margin:1rem auto;
   
 }
-
+h1{
+  text-align: center;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
