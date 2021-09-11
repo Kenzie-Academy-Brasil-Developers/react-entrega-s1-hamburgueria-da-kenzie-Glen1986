@@ -1,6 +1,6 @@
 import Product from '../Product';
 import './style.css';
-const MenuContainer =({total, handleClick, item, products, setProducts})=>{
+const MenuContainer =({ handleClick, item})=>{
 
 
   return(
