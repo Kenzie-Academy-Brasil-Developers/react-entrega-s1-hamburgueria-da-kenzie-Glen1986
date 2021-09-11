@@ -1,9 +1,10 @@
 import './style.css'
-const Subtotal =({ cartTotal,setCartTotal})=>{
+const Subtotal =({currentSale,setCartTotal, cartTotal})=>{
   return(
   <section className="subtotal">
     <h3>subtotal:</h3>
-    <h5> {cartTotal}R</h5>
+    <h5> {currentSale}R</h5>
+    <button onClick={()=>alert(`total a pagar: ${currentSale}`)}>caixa</button>
   </section>
   )
 }

@@ -6,7 +6,9 @@ const Product =( {addCart,item,id, name, category, price,total, handleClick,prod
     <div className="nombre">{item.name}</div>
     <div className="categoria">{item.category}</div>
     <div className="precio">{item.price}.R</div>
-    <button id={item.id} onClick= {()=>handleClick(item.id,total)}  className="button">{item.name}</button>
+    <button id={item.id} onClick= {()=>handleClick(item.id)
+                                                              
+  }  className="button">{item.name}</button>
   </div>
   )
 }
