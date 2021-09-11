@@ -29,20 +29,20 @@ const showProducts = (e) =>{
 //  setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
 //  )
 };
+const total =()=>{
+  console.log("total")
+  setCartTotal(
+    [cartTotal, currentSale.map(item=>item.price).reduce((a,b)=> a + b)]
+  )
+}
  const  handleClick = (e) =>{
+
    setCurrentSale(
      [...currentSale, products.find(item=>item.id === e)]
    )
 };
-/*
-const total =()=>{
-  setCartTotal(
-    [...cartTotal, currentSale.map(item=>item.price).reduce((a,b)=>{
-      return a + b
-    })]
-  )
-}
-*/
+
+
 return (
   <>
         <h1>KenzieBurguer</h1>
@@ -59,14 +59,18 @@ return (
         item = {
         products.map(item=>
          item) }
-        
+        total={total} 
         products = { products }
         setProducts = { setProducts }
         handleClick = { handleClick }
       />
       <Subtotal
-        currentSale = {currentSale}
-        cartTotal ={ Number(cartTotal)}
+        total ={total}
+        cartTotal = {cartTotal}
+        currentSale = {currentSale.map(item=>item.price)}
+     //   precios ={// Number( cartTotal )
+     //    currentSale.reduce((a,b)=>a+b)
+     //   }
         setCartTotal = {setCartTotal}
       ></Subtotal>
     </div>

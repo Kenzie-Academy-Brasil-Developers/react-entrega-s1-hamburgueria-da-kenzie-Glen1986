@@ -11,4 +11,7 @@ button.NavBar{
   form{
     margin: 0 40%;
   }
+  form>button{
+    width:5rem;
+  }
 }
