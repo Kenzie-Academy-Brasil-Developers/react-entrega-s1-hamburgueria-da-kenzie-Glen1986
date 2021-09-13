@@ -1,7 +1,7 @@
 .subtotal{
   position: absolute;
   left:12rem;
-  top:84rem;
+  top:86rem;
 }
 @media ( min-width: 760px ){
   .subtotal{

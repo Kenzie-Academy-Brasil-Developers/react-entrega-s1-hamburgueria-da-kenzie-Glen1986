@@ -43,12 +43,6 @@ const showProducts = (e) =>{
   )
 }
 */
- const  handleClick = ( e) =>{
-   setCurrentSale(
-     [...currentSale, products.find(item=>item.id === e)]
-    
-   )
-};
 
 
 return (
