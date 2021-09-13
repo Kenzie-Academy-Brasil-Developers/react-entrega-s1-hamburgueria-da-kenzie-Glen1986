@@ -1,8 +1,8 @@
-import './style.css'
-const Product =( { filteredProducts, addCart,item,id,userInput, name, category, price,total, handleClick,products } )=>{
+
+import './styles.css'
+const FiltredProduct =( { filteredProducts, addCart,item,id,userInput, name, category, price,total, handleClick,products } )=>{
   return(
-    <>
-      <div key={item.id} className="product">
+       <div className="product">
         <div className="id">{item.id}</div>
         <div className="nombre">{item.name}</div>
         <div className="categoria">{item.category}</div>
@@ -11,10 +11,10 @@ const Product =( { filteredProducts, addCart,item,id,userInput, name, category, 
                                                                   
       }  className="button">{item.name}</button>
       </div>
-   </>
+
 
   )
 }
-export default Product;
+export default FiltredProduct;
 
 

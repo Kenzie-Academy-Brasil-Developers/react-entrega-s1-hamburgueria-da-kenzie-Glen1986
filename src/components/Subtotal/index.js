@@ -1,5 +1,5 @@
 import './style.css'
-const Subtotal =({currentSale, cartTotal, total})=>{
+const Subtotal =({currentSale,setCartTotal, cartTotal})=>{
   return(
   <section className="subtotal">
     <h3>subtotal:</h3>

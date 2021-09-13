@@ -26,6 +26,7 @@ const [userInput, setUserInput] = useState("");
 
 const showProducts = (e) =>{
   e.preventDefault();
+
   setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
   )
 };
@@ -33,16 +34,16 @@ const showProducts = (e) =>{
    setCurrentSale(
      [...currentSale, products.find(item=>item.id === e)]
    )
+
 };
-/*
-const total =()=>{
+/*const total =(currentSale)=>{
   setCartTotal(
-    [...cartTotal, currentSale.map(item=>item.price).reduce((a,b)=>{
-      return a + b
-    })]
+    [...cartTotal, currentSale.map(item=>item.price)
+                           .reduce((a,b)=> a + b,0)]
   )
 }
 */
+
 return (
   <>
         <h1>KenzieBurguer</h1>
@@ -55,6 +56,7 @@ return (
       ></NavBar>
   <div className="App">
     <div className="ContainerMenu">
+
       <MenuContainer
         item = {
         products.map(item=>
@@ -69,6 +71,8 @@ return (
         setCartTotal= {setCartTotal}
         currentSale = {
         currentSale.map(item=>item.price).reduce((a,b)=>a+b,0)} 
+
+
       ></Subtotal>
     </div>
 
