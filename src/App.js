@@ -26,8 +26,8 @@ const [userInput, setUserInput] = useState("");
 
 const showProducts = (e) =>{
   e.preventDefault();
-//  setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
-//  )
+  setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
+  )
 };
  const  handleClick = (e) =>{
    setCurrentSale(
@@ -65,9 +65,10 @@ return (
         handleClick = { handleClick }
       />
       <Subtotal
-        currentSale = {currentSale}
-        cartTotal ={ Number(cartTotal)}
-        setCartTotal = {setCartTotal}
+        cartTotal = {cartTotal}
+        setCartTotal= {setCartTotal}
+        currentSale = {
+        currentSale.map(item=>item.price).reduce((a,b)=>a+b,0)} 
       ></Subtotal>
     </div>
 
