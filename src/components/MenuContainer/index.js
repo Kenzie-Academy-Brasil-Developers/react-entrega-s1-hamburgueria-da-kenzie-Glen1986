@@ -1,12 +1,11 @@
 import Product from '../Product';
 import './style.css';
-const MenuContainer =({handleClick, item, products, setProducts})=>{
-
+const MenuContainer =({userInput, handleClick, item})=>{
 
   return(
-  <div className="block">
-     {item.map(item=> <Product handleClick={handleClick} item ={item} key = {item.id} />)}
- </div>
+  <div key={item.id}className="block">
+    {item.map(item=>  <Product key={item.id} handleClick={handleClick} item={item}  />)}
+  </div>
   )
 }
 export default MenuContainer;
