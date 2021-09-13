@@ -1,5 +1,4 @@
 import MenuContainer from './components/MenuContainer';
-///import WhiteB from './components/WhiteB';
 import Subtotal from './components/Subtotal';
 import NavBar from './components/NavBar';
 import ContCart from './components/ContCart';
