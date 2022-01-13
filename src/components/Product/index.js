@@ -1,8 +1,10 @@
 import './style.css'
-const Product =( { filteredProducts, addCart,item,id,userInput, name, category, price,total, handleClick,products } )=>{
+const Product =( {index, filteredProducts, addCart,item,id,userInput, name, category, price,total, handleClick,products } )=>{
+
+ const key = `${item.index}`
   return(
     <>
-      <div key={item.id} className="product">
+      <li className="product" key = {key}>
         <div className="id">{item.id}</div>
         <div className="nombre">{item.name}</div>
         <div className="categoria">{item.category}</div>
@@ -10,7 +12,7 @@ const Product =( { filteredProducts, addCart,item,id,userInput, name, category, 
         <button id={item.id} onClick= {()=>handleClick(item.id)
                                                                   
       }  className="button">{item.name}</button>
-      </div>
+      </li>
    </>
 
   )

@@ -23,15 +23,16 @@ const [cartTotal, setCartTotal] = useState(0);
 const [userInput, setUserInput] = useState("");
 
 
-const showProducts = (e) =>{
+const showProducts = (e, pos) =>{
   e.preventDefault();
-
-  setFilteredProducts([...filteredProducts, products.filter(item =>item.name === e)]
+  setFilteredProducts([...filteredProducts, products.filter((item) => item.name ===  userInput)]
   )
+    console.log(userInput, filteredProducts)
 };
+    console.log(...filteredProducts)
  const  handleClick = (e) =>{
-   setCurrentSale(
-     [...currentSale, products.find(item=>item.id === e)]
+ setCurrentSale(
+   [...currentSale, products.find(item=>item.id === e)]
    )
 
 };
@@ -58,10 +59,15 @@ return (
     <div className="ContainerMenu">
 
       <MenuContainer
-        item = {
+        item = { filteredProducts.length > 0 ? (
+
+            products.filter(item => item.name === userInput)
+         
+        ):(
         products.map(item=>
-         item) }
-        
+         item)
+        )}
+    //    {products.map(item=>item)} 
         products = { products }
         setProducts = { setProducts }
         handleClick = { handleClick }
